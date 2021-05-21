@@ -1,9 +1,6 @@
 """
 created by Nagaj at 21/05/2021
 """
-"""
-created by Nagaj at 20/05/2021
-"""
 
 # ########  SCREEN  #################
 WIDTH = 800
@@ -22,7 +19,10 @@ LEFT_PADDLE_POSITION = ((-WIDTH // 2) + 50, 0)
 MOVE_BY = 20
 
 # #########  KEYS #############
-UP = "w"
-DOWN = "s"
+RIGHT_UP = "Up"
+RIGHT_DOWN = "Down"
+
+LEFT_UP = "w"
+LEFT_DOWN = "s"
 
 # ######## BALL  ################
