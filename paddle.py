@@ -31,3 +31,6 @@ class Paddle(TurtleConfig):
     def to_down(self):
         if self.is_free_to_move_down:
             self.goto(x=self.xcor(), y=self.ycor() - MOVE_BY)
+
+    def win(self):
+        pass

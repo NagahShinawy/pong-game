@@ -3,9 +3,8 @@ created by Nagaj at 21/05/2021
 """
 import time
 
-from config import screen_setup
-from paddle import Paddle
 from ball import Ball
+from config import screen_setup
 from constants import (
     RIGHT_UP,
     RIGHT_DOWN,
@@ -16,6 +15,7 @@ from constants import (
     CIRCLE,
     SQUARE,
 )
+from paddle import Paddle
 
 # ############### ############### ############### ##############
 
@@ -33,6 +33,7 @@ screen.onkey(key=RIGHT_DOWN, fun=right_paddle.to_down)
 screen.onkey(key=LEFT_UP, fun=left_paddle.to_up)
 screen.onkey(key=LEFT_DOWN, fun=left_paddle.to_down)
 
+
 # ############### ############### ############### ##############
 
 
@@ -42,12 +43,23 @@ def play():
         time.sleep(0.1)
         screen.update()
         ball.move()
-        if ball.is_collision_with_walls_up_or_down():   # detect collision with wall up or down
-            ball.bounce()
-        if ball.is_collision_with_right_paddle(right_paddle):
-            ball.bounce_paddle()
-        if ball.is_collision_with_left_paddle(left_paddle):
-            ball.bounce_paddle()
+
+        if ball.missed_left():
+            ball.reset_position()
+            right_paddle.win()
+
+        if ball.missed_right():
+            ball.reset_position()
+            left_paddle.win()
+
+        if (
+            ball.is_collision_with_walls_up_or_down()
+        ):  # detect collision with wall up or down
+            ball.bounce_y()
+        if ball.is_collision_with_right_paddle(
+            right_paddle
+        ) or ball.is_collision_with_left_paddle(left_paddle):
+            ball.bounce_x()
     screen.exitonclick()
 
 

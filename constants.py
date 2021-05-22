@@ -28,7 +28,8 @@ LEFT_DOWN = "s"
 # ######## BALL  ################
 CIRCLE = "circle"
 CENTER = (0, 0)
-
+MISSED_RIGHT = 380
+MISSED_LEFT = -380
 # ######### WALL ##############
 END_OF_UP_WALL = (HEIGHT // 2) - 20
 END_OF_DOWN_WALL = (-HEIGHT // 2) + 20
