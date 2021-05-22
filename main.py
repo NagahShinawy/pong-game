@@ -4,14 +4,24 @@ created by Nagaj at 21/05/2021
 
 from config import screen_setup
 from paddle import Paddle
-from constants import RIGHT_UP, RIGHT_DOWN, LEFT_UP, LEFT_DOWN, LEFT_PADDLE_POSITION
+from ball import Ball
+from constants import (
+    RIGHT_UP,
+    RIGHT_DOWN,
+    LEFT_UP,
+    LEFT_DOWN,
+    RIGHT_PADDLE_POSITION,
+    LEFT_PADDLE_POSITION,
+    CIRCLE,
+    SQUARE,
+)
 
 
 screen = screen_setup()
-right_paddle = Paddle()
-left_paddle = Paddle(LEFT_PADDLE_POSITION)
+right_paddle = Paddle(shape=SQUARE, position=RIGHT_PADDLE_POSITION)
+left_paddle = Paddle(shape=SQUARE, position=LEFT_PADDLE_POSITION)
+ball = Ball(shape=CIRCLE)
 screen.listen()
-screen.update()
 
 
 def play():
@@ -26,5 +36,5 @@ def play():
     screen.exitonclick()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     play()

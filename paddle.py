@@ -1,32 +1,21 @@
 """
 created by Nagaj at 21/05/2021
 """
-from turtle import Turtle
+from config import TurtleConfig
 
 from constants import (
     PADDLE_WIDTH,
     PADDLE_LEN,
-    RIGHT_PADDLE_POSITION,
-    WHITE,
-    SQUARE,
     MOVE_BY,
     HEIGHT,
-    FASTEST,
 )
 
 
-class Paddle(Turtle):
-    def __init__(self, position=RIGHT_PADDLE_POSITION):
-        super().__init__()
-        self.create(position)
+class Paddle(TurtleConfig):
 
-    def create(self, position):
-        self.shape(SQUARE)
-        self.color(WHITE)
-        self.penup()
+    def create(self, shape, position):
+        super().create(shape, position)
         self.shapesize(stretch_wid=PADDLE_WIDTH, stretch_len=PADDLE_LEN)
-        self.speed(FASTEST)
-        self.goto(position)
 
     @property
     def is_free_to_move_up(self):

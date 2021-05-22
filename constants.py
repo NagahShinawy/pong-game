@@ -26,3 +26,5 @@ LEFT_UP = "w"
 LEFT_DOWN = "s"
 
 # ######## BALL  ################
+CIRCLE = "circle"
+CENTER = (0, 0)
