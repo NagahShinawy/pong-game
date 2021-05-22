@@ -18,7 +18,7 @@ def screen_setup():
 class TurtleConfig(Turtle):
 
     def __init__(self, shape, position=CENTER, *args, **kwargs):
-        super(TurtleConfig, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.create(shape, position)
 
     def create(self, shape, position):

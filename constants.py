@@ -14,8 +14,8 @@ WHITE = "white"
 FASTEST = "fastest"
 PADDLE_WIDTH = 5
 PADDLE_LEN = 1
-RIGHT_PADDLE_POSITION = ((WIDTH // 2) - 50, 0)    # 350
-LEFT_PADDLE_POSITION = ((-WIDTH // 2) + 50, 0)    # -350
+RIGHT_PADDLE_POSITION = ((WIDTH // 2) - 50, 0)  # 350
+LEFT_PADDLE_POSITION = ((-WIDTH // 2) + 50, 0)  # -350
 MOVE_BY = 20
 
 # #########  KEYS #############
@@ -33,3 +33,14 @@ MISSED_LEFT = -380
 # ######### WALL ##############
 END_OF_UP_WALL = (HEIGHT // 2) - 20
 END_OF_DOWN_WALL = (-HEIGHT // 2) + 20
+
+# ###########  TURTLE   #########
+DEFAULT_TURTLE = "turtle"
+
+# ######  SCORE ##############
+DEFAULT_FONT = ("code", 45, "normal")
+WINNER_FONT = ("code", 20, "normal")
+SCORE_POSITION = 0, 200
+CENTER_TEXT = "center"
+GAME_OVER = 10
+SCORE_INFO = "{}\t{}"

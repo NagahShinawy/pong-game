@@ -12,6 +12,7 @@ class Ball(TurtleConfig):
         super().__init__(shape, position, *args, **kwargs)
         self.x_move = 10
         self.y_move = 10
+        self.move_speed = 0.1
 
     def move(self):
         self.goto(self.xcor() + self.x_move, self.ycor() + self.y_move)
@@ -28,8 +29,9 @@ class Ball(TurtleConfig):
     def is_collision_with_left_paddle(self, left_paddle: Paddle):
         return self.distance(left_paddle) < 50 and self.xcor() <= -320
 
-    def bounce_x(self):  # revert x when collision with paddle
-        self.x_move *= -1
+    def bounce_x(self):
+        self.x_move *= -1  # revert x when collision with paddle
+        self.move_speed *= 0.9  # decrease value every time paddle(R/L) touch the ball
 
     def missed_right(self):
         return self.xcor() > MISSED_RIGHT
@@ -39,6 +41,5 @@ class Ball(TurtleConfig):
 
     def reset_position(self):
         self.goto(CENTER)
+        self.move_speed = 0.1  # reset move speed every round
         self.bounce_x()  # revert the starting point direction after paddle win
-
-
