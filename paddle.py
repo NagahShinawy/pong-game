@@ -12,7 +12,6 @@ from constants import (
 
 
 class Paddle(TurtleConfig):
-
     def create(self, shape, position):
         super().create(shape, position)
         self.shapesize(stretch_wid=PADDLE_WIDTH, stretch_len=PADDLE_LEN)
@@ -23,7 +22,7 @@ class Paddle(TurtleConfig):
 
     @property
     def is_free_to_move_down(self):
-        return self.ycor() > (- HEIGHT // 2) + 60
+        return self.ycor() > (-HEIGHT // 2) + 60
 
     def to_up(self):
         if self.is_free_to_move_up:

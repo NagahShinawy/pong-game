@@ -14,8 +14,8 @@ WHITE = "white"
 FASTEST = "fastest"
 PADDLE_WIDTH = 5
 PADDLE_LEN = 1
-RIGHT_PADDLE_POSITION = ((WIDTH // 2) - 50, 0)
-LEFT_PADDLE_POSITION = ((-WIDTH // 2) + 50, 0)
+RIGHT_PADDLE_POSITION = ((WIDTH // 2) - 50, 0)    # 350
+LEFT_PADDLE_POSITION = ((-WIDTH // 2) + 50, 0)    # -350
 MOVE_BY = 20
 
 # #########  KEYS #############
@@ -28,3 +28,7 @@ LEFT_DOWN = "s"
 # ######## BALL  ################
 CIRCLE = "circle"
 CENTER = (0, 0)
+
+# ######### WALL ##############
+END_OF_UP_WALL = (HEIGHT // 2) - 20
+END_OF_DOWN_WALL = (-HEIGHT // 2) + 20

@@ -27,3 +27,4 @@ class TurtleConfig(Turtle):
         self.penup()
         self.speed(FASTEST)
         self.goto(position)
+
