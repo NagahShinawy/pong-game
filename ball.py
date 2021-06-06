@@ -33,10 +33,10 @@ class Ball(TurtleConfig):
         self.x_move *= -1  # revert x when collision with paddle
         self.move_speed *= 0.9  # decrease value every time paddle(R/L) touch the ball
 
-    def missed_right(self):
+    def is_missed_right(self):
         return self.xcor() > MISSED_RIGHT
 
-    def missed_left(self):
+    def is_missed_left(self):
         return self.xcor() < MISSED_LEFT
 
     def reset_position(self):

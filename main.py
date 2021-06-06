@@ -51,11 +51,11 @@ def play():
             scoreboard.show_winner()
             is_game_on = False
 
-        if ball.missed_left():
+        if ball.is_missed_left():
             ball.reset_position()
             scoreboard.round_to_right()
 
-        if ball.missed_right():
+        if ball.is_missed_right():
             ball.reset_position()
             scoreboard.round_to_left()
 
